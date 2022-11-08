@@ -80,18 +80,42 @@ container
   padding: 0 1rem;
 }
 
+@media (min-width: 600px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
 /* 
 ############
 nav bar
 ############ 
 */
 
-nav {
+.nav-bar {
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 20px 0;
+  padding: 3rem;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .nav-bar {
+    justify-content: space-between;
+    box-shadow: none;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+  }
 }
 
 /* 
@@ -105,6 +129,19 @@ header {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    text-align: left;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-content > p {
+    max-width: 350px;
+  }
 }
 
 /* 
@@ -142,6 +179,78 @@ section {
   object-fit: cover;
 }
 
+@media only screen and (min-width: 768px) {
+  section {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .light-blue-bg {
+    padding: 2rem;
+    border-radius: 20px;
+  }
+
+  .self-guide-section {
+    margin: 0 auto;
+    padding: 0 3rem;
+    max-width: 1200px;
+  }
+
+  .self-guide-section > img {
+    /* todo: Get the image to fit correctly */
+  }
+
+  .pick-trainer-section {
+    flex-direction: row-reverse;
+    padding: 0 3rem;
+  }
+}
+
+/*
+############
+benefits section
+############
+*/
+
+@media only screen and (min-width: 768px) {
+  .benefits-section {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .benefits-title {
+    order: 1;
+    width: 50%;
+  }
+  .benefits-btn {
+    order: 2;
+    width: 50%;
+  }
+  .benefits-cells {
+    order: 3;
+    width: 35%;
+  }
+  .benefits-image {
+    order: 4;
+    width: 65%;
+  }
+}
+
+/* Had to add this section to get the sizing right.
+Still not satisfied with how the transitions look between 1100px - 768px. 
+
+*/
+
+@media only screen and (min-width: 1100px) {
+  .benefits-cells {
+    width: 60%;
+  }
+
+  .benefits-image {
+    width: 40%;
+  }
+}
+
 /* 
 ############
 cells
@@ -158,20 +267,36 @@ cells
   margin-bottom: 1.3rem;
 }
 
+@media only screen and (min-width: 768px) {
+  .benefits-cells {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .cell {
+    max-width: 300px;
+    min-height: 250px;
+    max-height: 350px;
+    padding: 1rem;
+  }
+}
+
 /* 
 ############
 footer
 ############ 
 */
 
-.links {
+.link-temp-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.links > a {
+.link-temp-container > a {
   margin-top: 30px;
 }
 
@@ -218,9 +343,41 @@ form > button {
   font-size: 0.7rem;
 }
 
+@media (min-width: 768px) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  footer > h3 {
+    text-align: left;
+    width: 33%;
+  }
+
+  .links {
+    display: flex;
+    width: 33%;
+  }
+
+  .link-temp-container {
+    align-items: flex-start;
+    width: 150px;
+  }
+
+  .temp-container {
+    width: 33%;
+  }
+
+  .social-btns {
+    display: none;
+  }
+}
+
 /* 
 ############
-Call to action btn
+Call to action buttons
 ############ 
 */
 
@@ -229,7 +386,7 @@ Call to action btn
   margin: 0 auto;
   padding: 20px 0;
   font-size: 1.1rem;
-  width: 70%;
+  width: 15rem;
   background-color: #4b5092;
   border-radius: 50px;
   color: #fff;
@@ -275,9 +432,3 @@ General Utility classes
 Media queries
 ############ 
 */
-
-@media (min-width: 600px) {
-  .top-container {
-    border: 5px solid red;
-  }
-}

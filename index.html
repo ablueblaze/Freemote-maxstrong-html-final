@@ -9,8 +9,14 @@
   </head>
   <body>
     <div class="top-container" id="app">
-      <nav>
+      <nav class="container nav-bar">
         <h1>Max<strong>Strong</strong></h1>
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">About Us</a>
+          <a href="#">Contact</a>
+          <a href="#"><img src="search.png" alt="magnifying glass" /></a>
+        </div>
       </nav>
       <header class="container">
         <img
@@ -18,15 +24,18 @@
           src="Workout-cuate 1.png"
           alt="guy doing situps"
         />
-        <h2>The time to get <strong>strong</strong> has come</h2>
-        <p class="top-margin">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-          dolorum optio, voluptates dicta eveniet esse?
-        </p>
-        <button class="action-btn top-margin" href="#">Contact Us</button>
+        <div class="header-content">
+          <h2>The time to get <strong>strong</strong> has come</h2>
+          <p class="top-margin">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+            dolorum optio, voluptates dicta eveniet esse?
+          </p>
+          <button class="action-btn top-margin" href="#">Contact Us</button>
+        </div>
       </header>
-      <section class="section-margin-top">
+      <section class="self-guide-section section-margin-top">
         <img
+          class="containter"
           src="Online Personal Trainer-cuate 1.png"
           alt="woman working out to workout video"
         />
@@ -34,19 +43,19 @@
           <div class="top-margin">
             <h3>Choose loads <strong>for yourself</strong></h3>
             <p class="top-margin">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-              sint, laborum reprehenderit labore aperiam dolore qui delectus
-              nisi ipsum ratione, nulla porro.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nisi
+              ipsum ratione, nulla porro.
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-              sint, laborum reprehenderit labore aperiam dolore qui delectus
-              nisi ipsum ratione, nulla porro.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nisi
+              ipsum ratione, nulla porro.
             </p>
           </div>
         </div>
       </section>
-      <section class="section-margin-top accent-gradient text-center">
+      <section
+        class="pick-trainer-section section-margin-top accent-gradient text-center"
+      >
         <div class="container top-margin">
           <h3 class="bold-600">Alexander Arnold</h3>
           <p class="bold-600 small-top-margin">
@@ -65,17 +74,23 @@
           <button class="action-btn invert top-margin" href="#">
             Sign up for training
           </button>
-          <img
-            class="section-margin-top trainer-image"
-            src="coach.png"
-            alt="Athletic looking man"
-          />
         </div>
+        <img
+          class="section-margin-top trainer-image"
+          src="coach.png"
+          alt="Athletic looking man"
+        />
       </section>
-      <section class="container section-margin-top">
-        <img src="Healthy habit-cuate 1.png" alt="Women on a power walk" />
-        <h3 class="top-margin"><strong>The benefits</strong> of exercise</h3>
-        <div class="cells-container">
+      <section class="benefits-section container section-margin-top">
+        <img
+          class="benefits-image"
+          src="Healthy habit-cuate 1.png"
+          alt="Women on a power walk"
+        />
+        <h3 class="benefits-title top-margin">
+          <strong>The benefits</strong> of exercise
+        </h3>
+        <div class="benefits-cells">
           <div class="cell light-blue-bg">
             <h4>Increase business flexibility</h4>
             <p>
@@ -105,31 +120,37 @@
             </p>
           </div>
         </div>
-        <button class="action-btn">Get now</button>
+        <button class="benefits-btn action-btn">Get now</button>
       </section>
       <div class="separator-line section-margin-top"></div>
       <footer class="top-margin container text-center">
         <h3>Max<strong>Strong</strong></h3>
         <div class="links top-margin">
-          <a href="#">Home</a>
-          <a href="#">About Us</a>
-          <a href="#">Contact</a>
-          <a href="#">Our trainings</a>
-          <a href="#">Price</a>
-          <a href="#">FAQ</a>
+          <div class="link-temp-container">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="link-temp-container">
+            <a href="#">Our trainings</a>
+            <a href="#">Price</a>
+            <a href="#">FAQ</a>
+          </div>
         </div>
-        <p class="top-margin bold-600">Stay up to date</p>
-        <form action="#" class="email-container">
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Your email address"
-          />
-          <button type="submit">
-            <img src="public/send.png" alt="send icon" />
-          </button>
-        </form>
+        <div class="temp-container">
+          <p class="top-margin bold-600">Stay up to date</p>
+          <form action="#" class="email-container">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your email address"
+            />
+            <button type="submit">
+              <img src="send.png" alt="send icon" />
+            </button>
+          </form>
+        </div>
         <div class="social-btns">
           <a href="#">
             <img src="Instagram.png" alt="Instagram icon" />
