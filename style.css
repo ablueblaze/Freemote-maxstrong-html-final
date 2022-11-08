@@ -176,6 +176,8 @@ footer
 }
 
 .email-container {
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
   height: 40px;
 }
@@ -191,8 +193,6 @@ form > input {
 form > button {
   height: 100%;
   padding: 0 10px;
-  /* To get the visual correct: */
-  margin-left: -5px;
   background-color: #fff;
   border: 1px solid #fff;
   border-radius: 0 5px 5px 0;
@@ -268,4 +268,16 @@ General Utility classes
 
 .separator-line {
   border-top: 2px solid lightgray;
+}
+
+/*
+############
+Media queries
+############ 
+*/
+
+@media (min-width: 600px) {
+  .top-container {
+    border: 5px solid red;
+  }
 }
