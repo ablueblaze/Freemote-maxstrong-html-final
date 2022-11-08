@@ -8,7 +8,7 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app">
+    <div class="top-container" id="app">
       <nav>
         <h1>Max<strong>Strong</strong></h1>
       </nav>
@@ -118,18 +118,35 @@
           <a href="#">Price</a>
           <a href="#">FAQ</a>
         </div>
-        <form action="#" class="email-container top-margin">
-          <p class="bold-600">Stay up to date</p>
+        <p class="top-margin bold-600">Stay up to date</p>
+        <form action="#" class="email-container">
           <input
             type="email"
             name="email"
             id="email"
             placeholder="Your email address"
           />
-          <button>></button>
+          <button type="submit">
+            <img class="send-img" src="public/send.png" alt="send icon" />
+          </button>
         </form>
-        <div class="social-btns"></div>
-        <div class="copyright section-margin-top">Copyright 2021 MaxStrong</div>
+        <div class="social-btns">
+          <a href="#">
+            <img src="Instagram.png" alt="Instagram icon" />
+          </a>
+          <a href="#">
+            <img src="Dribbble.png" alt="Dribble icon" />
+          </a>
+          <a href="#">
+            <img src="Twitter.png" alt="Twitter icon" />
+          </a>
+          <a href="#">
+            <img src="Youtube.png" alt="Youtube icon" />
+          </a>
+        </div>
+        <div class="copyright section-margin-top">
+          © Copyright © 2021 MaxStrong.
+        </div>
       </footer>
     </div>
     <script type="module" src="/main.js"></script>
