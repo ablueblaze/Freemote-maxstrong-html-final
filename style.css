@@ -1,3 +1,12 @@
+/* A quick guide:
+I have the CSS separated by sections. Each section covers one of two things:
+1. a Specific section or piece of the site
+2. a utility piece of CSS that is used in multiple places (i.e typography, buttons, etc)
+
+I hope that explains whats going here. If you have any questions, please ask. I'm happy to help.
+
+Thanks for the feedback! */
+
 /* Box sizing rules */
 *,
 *::before,
@@ -146,7 +155,7 @@ header {
 
 /* 
 ############
-Sections / Section utility classes
+Sections 
 ############ 
 */
 
@@ -154,23 +163,6 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.light-blue-bg {
-  background-color: #e6f2ff;
-}
-
-.light-purple-bg {
-  background-color: #727aef2a;
-}
-
-.accent-gradient {
-  background: rgb(186, 212, 255);
-  background: linear-gradient(
-    140deg,
-    rgba(186, 212, 255, 1) 0%,
-    rgba(100, 135, 191, 1) 100%
-  );
 }
 
 .trainer-image {
@@ -185,24 +177,26 @@ section {
     align-items: center;
   }
 
-  .light-blue-bg {
+  .self-guide-content-box {
     padding: 2rem;
     border-radius: 20px;
   }
 
   .self-guide-section {
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 3rem;
-    max-width: 1200px;
-  }
-
-  .self-guide-section > img {
-    /* todo: Get the image to fit correctly */
   }
 
   .pick-trainer-section {
     flex-direction: row-reverse;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 3rem;
+  }
+
+  .pick-trainer-section p {
+    min-width: 350px;
   }
 }
 
@@ -238,7 +232,6 @@ benefits section
 
 /* Had to add this section to get the sizing right.
 Still not satisfied with how the transitions look between 1100px - 768px. 
-
 */
 
 @media only screen and (min-width: 1100px) {
@@ -289,14 +282,14 @@ footer
 ############ 
 */
 
-.link-temp-container {
+.link-seperator {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.link-temp-container > a {
+.link-seperator > a {
   margin-top: 30px;
 }
 
@@ -351,7 +344,12 @@ form > button {
     flex-wrap: wrap;
   }
 
+  footer.top-margin {
+    margin-top: 10px;
+  }
+
   footer > h3 {
+    margin-top: 50px;
     text-align: left;
     width: 33%;
   }
@@ -361,12 +359,12 @@ form > button {
     width: 33%;
   }
 
-  .link-temp-container {
+  .link-seperator {
     align-items: flex-start;
     width: 150px;
   }
 
-  .temp-container {
+  .email-form-container {
     width: 33%;
   }
 
@@ -403,6 +401,12 @@ General Utility classes
 ############ 
 */
 
+/* As a bit of an explanation, I have been using tailwind css for the past few months.
+And using utility classes makes things much easier and cleaner in my opinion. 
+If this is a bad habit to be in, please let me know. I want to make sure that I'm following best practices. 
+I did try to keep the utility classes to a minimum.
+*/
+
 .top-margin {
   margin-top: 1.7rem;
 }
@@ -427,8 +431,19 @@ General Utility classes
   border-top: 2px solid lightgray;
 }
 
-/*
-############
-Media queries
-############ 
-*/
+.light-blue-bg {
+  background-color: #e6f2ff;
+}
+
+.light-purple-bg {
+  background-color: #727aef2a;
+}
+
+.accent-gradient {
+  background: rgb(186, 212, 255);
+  background: linear-gradient(
+    140deg,
+    rgba(186, 212, 255, 1) 0%,
+    rgba(100, 135, 191, 1) 100%
+  );
+}
