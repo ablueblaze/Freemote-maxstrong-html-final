@@ -1,0 +1,140 @@
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+/*! All the big changes are here */
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}
+
+/* Basic css reset: */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'helix', sans-serif;
+}
+
+/* 
+############
+Containers
+############ 
+*/
+
+.top-container {
+  /* todo: remove height when done */
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1800px;
+  padding-bottom: 100px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    170deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(238, 245, 255, 1) 100%
+  );
+}
+
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media only screen and (min-width: 992px) {
+  .container {
+    max-width: 1400px;
+    padding: 0 40px;
+  }
+}
+
+/* 
+############
+Typography
+############ 
+*/
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* 
+############
+Nav bar
+############ 
+*/
+
+.nav-container {
+  padding: 1rem 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+nav > p {
+  font-size: 36px;
+  text-align: center;
+}
+
+.nav-links {
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  .nav-container {
+    box-shadow: none;
+    padding: 1.5rem 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav > p {
+    font-size: 48px;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 45%;
+  }
+
+  .nav-links > a {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .nav-links {
+    width: 30%;
+  }
+}
+
+/* 
+############
+General use utility classes
+############ 
+*/
+
+.bold {
+  font-weight: 600;
+}

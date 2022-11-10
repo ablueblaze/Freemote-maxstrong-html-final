@@ -3,22 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
     <div class="top-container" id="app">
-      <nav class="container nav-bar">
-        <h1>Max<strong>Strong</strong></h1>
-        <div class="nav-links">
-          <a href="#">Home</a>
-          <a href="#">About Us</a>
-          <a href="#">Contact</a>
-          <a href="#"><img src="search.png" alt="magnifying glass" /></a>
-        </div>
-      </nav>
-      <header class="container">
+      <div class="nav-container">
+        <nav class="container">
+          <p>Max<span class="bold">Strong</span></p>
+          <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#"><img src="search.png" alt="magnifying glass" /></a>
+          </div>
+        </nav>
+      </div>
+      <!-- <header class="container">
         <img
           class="hero-image top-margin"
           src="Workout-cuate 1.png"
@@ -82,45 +84,53 @@
         />
       </section>
       <section class="benefits-section container section-margin-top">
-        <img
-          class="benefits-image"
-          src="Healthy habit-cuate 1.png"
-          alt="Women on a power walk"
-        />
-        <h3 class="benefits-title top-margin">
-          <strong>The benefits</strong> of exercise
-        </h3>
-        <div class="benefits-cells">
-          <div class="cell light-blue-bg">
-            <h4>Increase business flexibility</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. suscipit
-              minima? Praesentium velit minus quae eligendi.
-            </p>
-          </div>
-          <div class="cell light-purple-bg">
-            <h4>Improves mental health</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. suscipit
-              minima? Praesentium velit minus quae eligendi.
-            </p>
-          </div>
-          <div class="cell light-purple-bg">
-            <h4>Provides more energy throughout the day</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. suscipit
-              minima? Praesentium velit minus quae eligendi.
-            </p>
-          </div>
-          <div class="cell light-blue-bg">
-            <h4>Helps to find new friends</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. suscipit
-              minima? Praesentium velit minus quae eligendi.
-            </p>
+        <div class="benefits-top desktop-only">
+          <h3 class="benefits-title top-margin">
+            <strong>The benefits</strong> of exercise
+          </h3>
+          <button class="benefits-btn action-btn">Get now</button>
+        </div>
+        <div class="desktop-wrapper">
+          <img
+            class="benefits-image"
+            src="Healthy habit-cuate 1.png"
+            alt="Women on a power walk"
+          />
+          <h3 class="benefits-title top-margin mobile-only">
+            <strong>The benefits</strong> of exercise
+          </h3>
+          <div class="benefits-cells">
+            <div class="cell light-blue-bg">
+              <h4>Increase business flexibility</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                suscipit minima? Praesentium velit minus quae eligendi.
+              </p>
+            </div>
+            <div class="cell light-purple-bg">
+              <h4>Improves mental health</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                suscipit minima? Praesentium velit minus quae eligendi.
+              </p>
+            </div>
+            <div class="cell light-purple-bg">
+              <h4>Provides more energy throughout the day</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                suscipit minima? Praesentium velit minus quae eligendi.
+              </p>
+            </div>
+            <div class="cell light-blue-bg">
+              <h4>Helps to find new friends</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                suscipit minima? Praesentium velit minus quae eligendi.
+              </p>
+            </div>
           </div>
         </div>
-        <button class="benefits-btn action-btn">Get now</button>
+        <button class="benefits-btn action-btn mobile-only">Get now</button>
       </section>
       <div class="separator-line section-margin-top"></div>
       <footer class="top-margin container text-center">
@@ -168,7 +178,7 @@
         <div class="copyright section-margin-top">
           © Copyright © 2021 MaxStrong.
         </div>
-      </footer>
+      </footer> -->
     </div>
     <script type="module" src="/main.js"></script>
   </body>
