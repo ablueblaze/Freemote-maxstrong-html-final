@@ -1,0 +1,507 @@
+/* A quick guide:
+I have the CSS separated by sections. Each section covers one of two things:
+1. a Specific section or piece of the site
+2. a utility piece of CSS that is used in multiple places (i.e typography, buttons, etc)
+
+I hope that explains whats going here. If you have any questions, please ask. I'm happy to help.
+
+Thanks for the feedback! */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'helix', sans-serif;
+}
+
+.top-container {
+  padding-bottom: 100px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    170deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(238, 245, 255, 1) 100%
+  );
+}
+
+/* 
+############
+Typography
+############ 
+*/
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}
+
+/* 
+############
+container
+############ 
+*/
+
+/* Used as an applied container because there are sections that have color backrground and need to be full width. */
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 600px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+/* 
+############
+nav bar
+############ 
+*/
+
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 3rem;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .nav-bar {
+    justify-content: space-between;
+    box-shadow: none;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+  }
+}
+
+/* 
+############
+Header
+############ 
+*/
+
+/* todo: Fix the sizing of the hero image */
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    text-align: left;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header h2 {
+    font-size: 4rem;
+  }
+
+  header img {
+    width: 50%;
+  }
+
+  .header-content > p {
+    font-size: 1.3rem;
+    max-width: 400px;
+  }
+}
+
+/* 
+############
+Sections 
+############ 
+*/
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.trainer-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 768px) {
+  section {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .self-guide-content-box {
+    padding: 2rem;
+    border-radius: 20px;
+  }
+
+  .self-guide-section {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  .pick-trainer-section {
+    flex-direction: row-reverse;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  /* todo: fix pick trainer background color to expand further */
+  .pick-trainer-section p {
+    min-width: 350px;
+  }
+}
+
+/*
+############
+benefits section
+############
+*/
+
+.desktop-only {
+  display: none;
+}
+
+.desktop-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .benefits-section {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 3rem; */
+  }
+
+  .benefits-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .desktop-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .benefits-cells {
+    flex-wrap: wrap;
+  }
+
+  /* .benefits-section {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .benefits-title {
+    order: 1;
+    width: 50%;
+  }
+  .benefits-btn {
+    order: 2;
+    width: 50%;
+  }
+  .benefits-cells {
+    order: 3;
+    width: 35%;
+  }
+  .benefits-image {
+    order: 4;
+    width: 65%;
+  } */
+}
+
+/* Had to add this section to get the sizing right.
+Still not satisfied with how the transitions look between 1100px - 768px. 
+*/
+
+@media only screen and (min-width: 1100px) {
+  /* .benefits-cells {
+    width: 60%;
+  }
+
+  .benefits-image {
+    width: 40%;
+  } */
+}
+
+/* 
+############
+cells
+############ 
+*/
+
+.cell {
+  border-radius: 20px;
+  padding: 3rem;
+  margin: 20px 0;
+}
+
+.cell > h4 {
+  margin-bottom: 1.3rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .benefits-cells {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .cell {
+    max-width: 300px;
+    min-height: 250px;
+    max-height: 350px;
+    padding: 1rem;
+  }
+}
+
+/* 
+############
+footer
+############ 
+*/
+
+.link-seperator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-seperator > a {
+  margin-top: 30px;
+}
+
+.email-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  height: 40px;
+}
+
+form > input {
+  padding-left: 10px;
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px 0 0 5px;
+}
+
+form > button {
+  height: 100%;
+  padding: 0 10px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 0 5px 5px 0;
+}
+
+.social-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.social-btns > a > img {
+  width: 100%;
+  height: 100%;
+}
+.social-btns > a {
+  margin: 0 5px;
+  width: 30px;
+}
+
+.copyright {
+  font-size: 0.7rem;
+}
+
+@media (min-width: 768px) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  footer.top-margin {
+    margin-top: 10px;
+  }
+
+  footer > h3 {
+    margin-top: 50px;
+    text-align: left;
+    width: 33%;
+  }
+
+  .links {
+    display: flex;
+    width: 33%;
+  }
+
+  .link-seperator {
+    align-items: flex-start;
+    width: 150px;
+  }
+
+  .email-form-container {
+    width: 33%;
+  }
+
+  .social-btns {
+    display: none;
+  }
+}
+
+/* 
+############
+Call to action buttons
+############ 
+*/
+
+.action-btn {
+  border: none;
+  margin: 0 auto;
+  padding: 20px 0;
+  font-size: 1.1rem;
+  width: 15rem;
+  background-color: #4b5092;
+  border-radius: 50px;
+  color: #fff;
+}
+
+.invert {
+  background-color: #fff;
+  color: #4b5092;
+}
+
+/* 
+############
+General Utility classes
+############ 
+*/
+
+/* As a bit of an explanation, I have been using tailwind css for the past few months.
+And using utility classes makes things much easier and cleaner in my opinion. 
+If this is a bad habit to be in, please let me know. I want to make sure that I'm following best practices. 
+I did try to keep the utility classes to a minimum.
+*/
+
+.top-margin {
+  margin-top: 1.7rem;
+}
+
+.section-margin-top {
+  margin-top: 6rem;
+}
+
+.small-top-margin {
+  margin-top: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bold-600 {
+  font-weight: 600;
+}
+
+.separator-line {
+  border-top: 2px solid lightgray;
+}
+
+.light-blue-bg {
+  background-color: #e6f2ff;
+}
+
+.light-purple-bg {
+  background-color: #727aef2a;
+}
+
+.accent-gradient {
+  background: rgb(186, 212, 255);
+  background: linear-gradient(
+    140deg,
+    rgba(186, 212, 255, 1) 0%,
+    rgba(100, 135, 191, 1) 100%
+  );
+}

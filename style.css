@@ -1,20 +1,23 @@
-/* A quick guide:
-I have the CSS separated by sections. Each section covers one of two things:
-1. a Specific section or piece of the site
-2. a utility piece of CSS that is used in multiple places (i.e typography, buttons, etc)
+@media only screen and (min-width: 600px) {
+}
 
-I hope that explains whats going here. If you have any questions, please ask. I'm happy to help.
+@media only screen and (min-width: 768px) {
+}
 
-Thanks for the feedback! */
+/*! All the big changes are here */
+@media only screen and (min-width: 992px) {
+}
 
-/* Box sizing rules */
+@media only screen and (min-width: 1200px) {
+}
+
+/* Basic css reset: */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Remove default margin */
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +32,15 @@ body {
   font-family: 'helix', sans-serif;
 }
 
+/* 
+############
+Containers
+############ 
+*/
+
 .top-container {
+  margin: 0 auto;
+  max-width: 1800px;
   padding-bottom: 100px;
   background: rgb(255, 255, 255);
   background: linear-gradient(
@@ -39,91 +50,90 @@ body {
   );
 }
 
+.container {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media only screen and (min-width: 992px) {
+  .container {
+    max-width: 1400px;
+    padding: 0 40px;
+  }
+}
+
 /* 
 ############
 Typography
 ############ 
 */
 
-h1 {
-  font-size: 2.5rem;
-  font-weight: 400;
-}
-
-h2 {
-  font-size: 3.5rem;
-  font-weight: 400;
-}
-
-h3 {
-  font-size: 2.5rem;
-  font-weight: 400;
-}
-
-h4 {
-  font-size: 1.5rem;
-  font-weight: 600;
+a {
+  text-decoration: none;
+  color: #000;
 }
 
 p {
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-  font-size: 1rem;
-}
-
-/* 
-############
-container
-############ 
-*/
-
-/* Used as an applied container because there are sections that have color backrground and need to be full width. */
-.container {
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-@media (min-width: 600px) {
-  .container {
-    padding: 0 3rem;
-  }
+h2 {
+  font-size: 46px;
+  font-weight: 400;
 }
 
 /* 
 ############
-nav bar
+Nav bar
 ############ 
 */
 
-.nav-bar {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 3rem;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+.nav-container {
+  padding: 1rem 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+nav > p {
+  font-size: 36px;
+  text-align: center;
 }
 
 .nav-links {
   display: none;
 }
 
-@media (min-width: 600px) {
-  .nav-bar {
-    justify-content: space-between;
+@media only screen and (min-width: 600px) {
+  .nav-container {
     box-shadow: none;
+    padding: 1.5rem 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav > p {
+    font-size: 48px;
   }
 
   .nav-links {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 40%;
+    width: 45%;
+  }
+
+  .nav-links > a {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .nav-links {
+    width: 30%;
   }
 }
 
@@ -133,375 +143,238 @@ Header
 ############ 
 */
 
-/* todo: Fix the sizing of the hero image */
-
 header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header > img {
+  padding: 0 20px;
+}
+.header-contents {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
 }
 
-@media only screen and (min-width: 768px) {
+.header-contents > h1 {
+  font-size: 64px;
+  font-weight: 400;
+  margin-top: 24px;
+}
+
+.header-contents > p {
+  margin-top: 20px;
+}
+
+.contact-btn {
+  margin: 24px auto;
+}
+
+@media only screen and (min-width: 992px) {
   header {
-    text-align: left;
     flex-direction: row-reverse;
     justify-content: space-between;
-    align-items: center;
   }
 
-  header h2 {
-    font-size: 4rem;
+  header > img {
+    width: 60%;
+    padding: 0 0 0 20px;
   }
 
-  header img {
+  .header-contents {
+    width: 40%;
+    text-align: left;
+  }
+
+  .header-contents > h1 {
+    font-size: 72px;
+  }
+
+  .header-contents > p {
+    max-width: 450px;
+  }
+
+  .contact-btn {
+    margin: 30px 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  header > img {
     width: 50%;
   }
-
-  .header-content > p {
-    font-size: 1.3rem;
-    max-width: 400px;
+  .header-contents {
+    width: 50%;
   }
 }
 
 /* 
 ############
-Sections 
+Remote workout section
 ############ 
 */
 
-section {
+.remote-workout {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.trainer-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.remote-container {
+  padding: 20px 0;
+  margin-top: 24px;
 }
 
-@media only screen and (min-width: 768px) {
-  section {
+.remote-container > .container {
+  padding: 40px;
+}
+
+@media only screen and (min-width: 992px) {
+  .remote-workout {
     flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    padding: 0 40px;
+    margin: 0 auto;
+    margin-top: 250px;
   }
 
-  .self-guide-content-box {
-    padding: 2rem;
+  .remote-container {
+    width: 45%;
+    padding: 80px 0;
+    margin-top: 0;
     border-radius: 20px;
   }
 
-  .self-guide-section {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 0 3rem;
-  }
-
-  .pick-trainer-section {
-    flex-direction: row-reverse;
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 0 3rem;
-  }
-
-  /* todo: fix pick trainer background color to expand further */
-  .pick-trainer-section p {
-    min-width: 350px;
-  }
-}
-
-/*
-############
-benefits section
-############
-*/
-
-.desktop-only {
-  display: none;
-}
-
-.desktop-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-@media only screen and (min-width: 768px) {
-  .desktop-only {
-    display: block;
-  }
-
-  .mobile-only {
-    display: none;
-  }
-
-  .benefits-section {
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    /* max-width: 1600px;
-    margin: 0 auto;
-    padding: 0 3rem; */
-  }
-
-  .benefits-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
-  .desktop-wrapper {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .benefits-cells {
-    flex-wrap: wrap;
-  }
-
-  /* .benefits-section {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .benefits-title {
-    order: 1;
+  .remote-workout > img {
     width: 50%;
-  }
-  .benefits-btn {
-    order: 2;
-    width: 50%;
-  }
-  .benefits-cells {
-    order: 3;
-    width: 35%;
-  }
-  .benefits-image {
-    order: 4;
-    width: 65%;
-  } */
-}
-
-/* Had to add this section to get the sizing right.
-Still not satisfied with how the transitions look between 1100px - 768px. 
-*/
-
-@media only screen and (min-width: 1100px) {
-  /* .benefits-cells {
-    width: 60%;
-  }
-
-  .benefits-image {
-    width: 40%;
-  } */
-}
-
-/* 
-############
-cells
-############ 
-*/
-
-.cell {
-  border-radius: 20px;
-  padding: 3rem;
-  margin: 20px 0;
-}
-
-.cell > h4 {
-  margin-bottom: 1.3rem;
-}
-
-@media only screen and (min-width: 768px) {
-  .benefits-cells {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .cell {
-    max-width: 300px;
-    min-height: 250px;
-    max-height: 350px;
-    padding: 1rem;
+    padding: 0;
+    margin: 0;
   }
 }
 
 /* 
 ############
-footer
+Arnold section
 ############ 
 */
 
-.link-seperator {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.link-seperator > a {
-  margin-top: 30px;
-}
-
-.email-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  height: 40px;
-}
-
-form > input {
-  padding-left: 10px;
-  height: 100%;
-  background-color: #fff;
-  border: 1px solid #fff;
-  border-radius: 5px 0 0 5px;
-}
-
-form > button {
-  height: 100%;
-  padding: 0 10px;
-  background-color: #fff;
-  border: 1px solid #fff;
-  border-radius: 0 5px 5px 0;
-}
-
-.social-btns {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.social-btns > a > img {
+.arnold-section {
   width: 100%;
-  height: 100%;
-}
-.social-btns > a {
-  margin: 0 5px;
-  width: 30px;
-}
-
-.copyright {
-  font-size: 0.7rem;
+  margin: 0 auto;
+  margin-top: 100px;
+  background: linear-gradient(
+    99.85deg,
+    hsl(217, 100%, 86%) 0%,
+    hsl(217, 42%, 57%) 100%
+  );
 }
 
-@media (min-width: 768px) {
-  footer {
+.arnold-container {
+  padding-top: 100px;
+  text-align: center;
+}
+
+.arnold-container a {
+  display: block;
+  margin: 0 auto;
+  margin-top: 24px;
+}
+
+.arnold-image {
+  width: 100%;
+  padding: 0 20px;
+  margin-top: 100px;
+  margin-bottom: -4px;
+}
+
+@media only screen and (min-width: 992px) {
+  .arnold-section > .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
-    flex-wrap: wrap;
+    align-items: center;
   }
 
-  footer.top-margin {
-    margin-top: 10px;
-  }
-
-  footer > h3 {
-    margin-top: 50px;
+  .arnold-container {
+    padding-top: 0;
+    padding: 0 40px;
+    width: 45%;
     text-align: left;
-    width: 33%;
   }
 
-  .links {
-    display: flex;
-    width: 33%;
+  .arnold-container a {
+    margin-left: 0;
+    margin-top: 24px;
   }
 
-  .link-seperator {
-    align-items: flex-start;
-    width: 150px;
-  }
-
-  .email-form-container {
-    width: 33%;
-  }
-
-  .social-btns {
-    display: none;
+  .arnold-image {
+    width: 50%;
   }
 }
 
 /* 
 ############
-Call to action buttons
+Buttons
 ############ 
 */
 
-.action-btn {
-  border: none;
-  margin: 0 auto;
+.btn {
+  text-align: center;
   padding: 20px 0;
   font-size: 1.1rem;
-  width: 15rem;
-  background-color: #4b5092;
+  width: 250px;
   border-radius: 50px;
+}
+
+.blue-btn {
+  background-color: #4b5092;
+  border: 1px solid #4b5092;
   color: #fff;
 }
 
-.invert {
+.white-btn {
   background-color: #fff;
+  border: 1px solid #fff;
   color: #4b5092;
 }
 
 /* 
 ############
-General Utility classes
+General use utility classes
 ############ 
 */
 
-/* As a bit of an explanation, I have been using tailwind css for the past few months.
-And using utility classes makes things much easier and cleaner in my opinion. 
-If this is a bad habit to be in, please let me know. I want to make sure that I'm following best practices. 
-I did try to keep the utility classes to a minimum.
-*/
-
-.top-margin {
-  margin-top: 1.7rem;
-}
-
-.section-margin-top {
-  margin-top: 6rem;
-}
-
-.small-top-margin {
-  margin-top: 1rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.bold-600 {
+.bold {
   font-weight: 600;
 }
 
-.separator-line {
-  border-top: 2px solid lightgray;
+.top-spacer {
+  margin-top: 24px;
 }
 
 .light-blue-bg {
   background-color: #e6f2ff;
 }
 
-.light-purple-bg {
-  background-color: #727aef2a;
+/* 
+############
+Dev tools
+############ 
+*/
+
+.red-border {
+  border: 1px solid red;
 }
 
-.accent-gradient {
-  background: rgb(186, 212, 255);
-  background: linear-gradient(
-    140deg,
-    rgba(186, 212, 255, 1) 0%,
-    rgba(100, 135, 191, 1) 100%
-  );
+.blue-border {
+  border: 1px solid blue;
+}
+
+.green-border {
+  border: 1px solid green;
 }
